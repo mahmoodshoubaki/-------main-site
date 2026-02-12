@@ -178,6 +178,12 @@ h6,
     animation-delay: 2s;
 }
 
+.c3 {
+    bottom: 10%;
+    left: 80%;
+    animation-delay: 4s;
+}
+
 @keyframes float {
 
     0%,
