@@ -298,3 +298,258 @@ h6,
 .text-white {
     color: #fff !important;
 }
+
+/* Initiatives Section */
+.bg-light-gradient {
+    background: linear-gradient(180deg, #f9fafb 0%, #eef2f6 100%);
+}
+
+.initiatives-swiper {
+    padding: 20px 10px 60px 10px;
+    /* Extra padding bottom for pagination */
+}
+
+.initiative-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.initiative-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.initiative-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.category-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.card-content {
+    padding: 25px;
+    text-align: right;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-link:hover {
+    color: var(--primary-dark);
+    margin-right: 5px;
+}
+
+/* Swiper Customization */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: var(--primary-light);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary);
+    width: 30px;
+    border-radius: 6px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary);
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Remove default Swiper arrows */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    content: none !important;
+}
+
+/* FontAwesome Icon Styling */
+.swiper-button-next i,
+.swiper-button-prev i {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 8px 25px rgba(39, 150, 203, 0.4);
+    transform: scale(1.1);
+}
+
+/* Position adjustments for RTL if needed, though Swiper usually handles left/right swap */
+/* Ensure they don't overlap content on small screens */
+@media (max-width: 768px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+        /* Hide arrows on mobile, rely on pagination */
+    }
+}
+
+/* Initiative Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.initiative-modal {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.modal-overlay.active .initiative-modal {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.modal-header-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+    color: var(--primary);
+    border: none;
+    font-size: 1.2rem;
+}
+
+.modal-close-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: right;
+}
+
+.modal-title {
+    color: var(--primary-dark);
+    font-weight: 800;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.modal-description {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.modal-category {
+    display: inline-block;
+    padding: 6px 15px;
+    background: var(--primary-light);
+    color: white;
+    /* Fixed text color for better contrast on primary-light if needed, or adjust variable */
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
